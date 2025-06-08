@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Benimle evlenir mısın? 🐻‍❄️💖</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #ffd6e0, #fef6e4);
+            margin-top: 100px;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ff69b4;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px #fff;
+        }
+
+        .button {
+            padding: 18px 40px;
+            font-size: 1.5em;
+            margin: 15px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        #yesButton {
+            background-color: #ff85a2;
+            color: white;
+        }
+
+        #noButton {
+            background-color: #6c63ff;
+            color: white;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        #loveMessage {
+            display: none;
+            font-size: 2.5em;
+            color: #ff1493;
+            margin-top: 20px;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        #coupleImage {
+            display: none;
+            margin-top: 20px;
+            max-width: 90%;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            animation: fadeIn 2s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Benimle evlenir mısın? 💞💞👉👈</h1>
+
+    <button id="yesButton" class="button" onclick="accept()">Evet 💖</button>
+    <button id="noButton" class="button" onclick="decline()">Hayır 🙈</button>
+
+    <div id="loveMessage">Seni çooook seviyorum 💞💞</div>
+    <img id="coupleImage" src="müzk/1212.jpg" width="300" height="250" alt="Aşk Dolu Anımız"/>
+
+    <script>
+        let yesButton = document.getElementById("yesButton");
+        let noButton = document.getElementById("noButton");
+        let loveMessage = document.getElementById("loveMessage");
+        let coupleImage = document.getElementById("coupleImage");
+
+        let yesButtonScale = 1;
+
+        function decline() {
+            yesButtonScale += 0.2;
+            yesButton.style.transform = `scale(${yesButtonScale})`;
+
+            if (yesButtonScale >= 3) {
+                yesButton.style.position = "fixed";
+                yesButton.style.top = "50%";
+                yesButton.style.left = "50%";
+                yesButton.style.transform = "translate(-50%, -50%) scale(5)";
+                noButton.style.display = "none";
+            }
+        }
+
+        function accept() {
+            yesButton.style.display = "none";
+            noButton.style.display = "none";
+            loveMessage.style.display = "block";
+            coupleImage.style.display = "block";
+        }
+    </script>
+</body>
+</html>
